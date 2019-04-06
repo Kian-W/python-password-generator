@@ -24,7 +24,7 @@ NUMBERS = tuple(string.digits)
 def main():   
     password = gen_pass([])
     while True:
-        os.system('cls')
+        os.system('cls' if os.name=='nt' else 'clear') # clear console
 
         # Ask user to save
         print("Password:", password)
