@@ -25,14 +25,16 @@ def main():
     password = gen_pass([])
     while True:
         os.system('cls')
-        
-        print("Password:", password)  # Print the password
+
+        # Ask user to save
+        print("Password:", password)
         print("\nWould you like to save this password? [Y/N]")
         choice = input('>>')
 
         if choice == 'Y':
             save_pass(password)
 
+        # Ask user to gen new pass
         print("\nWould you generate a new password? [Y/N]")
         choice = input('>>')
         if choice == 'Y':
