@@ -1,10 +1,14 @@
 # A Python password generator
 
-# 15 Characters
-# 5 Lowercase
-# 5 Uppercase
-# 2 Symbols
-# 3 Numbers
+"""
+Password must have -
+
+- 15 Characters
+- 5 Lowercase
+- 5 Uppercase
+- 2 Symbols
+- 3 Numbers
+"""
 
 
 import random
@@ -14,13 +18,16 @@ import os
 
 
 # Text variables
+
 SYMBOLS = ("?", "@", "£", "$", "!")
 LOWERCASE = tuple(string.ascii_lowercase)
 UPPERCASE = tuple(string.ascii_uppercase)
 NUMBERS = tuple(string.digits)
 
+###############
 
 
+# Main function
 def main():
     password = gen_pass([])
     while True:
@@ -61,12 +68,12 @@ def gen_pass(pw):
         pw.insert(random.randint(0, pass_len), random.choice(NUMBERS))
         pass_len = len(pw)
 
-    return str(''.join(pw))  # Return characters instead of list
+    return str(''.join(pw))  # Return string instead of list
 
 
 # Function to save password
 def save_pass(pw):
-    with open("passwords.txt", "a+") as f:
+    with open("passwords.txt", "a+") as f:  
         print("What is this password for?")
         use = input('>>')
         f.write(f'{use}: {pw}\n')
