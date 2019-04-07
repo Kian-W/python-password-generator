@@ -24,6 +24,11 @@ LOWERCASE = tuple(string.ascii_lowercase)
 UPPERCASE = tuple(string.ascii_uppercase)
 NUMBERS = tuple(string.digits)
 
+NUM_OF_SYMBOLS = 2
+NUM_OF_LOWER = 5
+NUM_OF_UPPER = 5
+NUM_OF_NUMBERS = 3
+
 ###############
 
 
@@ -52,19 +57,19 @@ def main():
 
 # Function to generate password
 def gen_pass(pw):
-    for i in range(5):  # lowercase letters
+    for i in range(NUM_OF_LOWER):  # lowercase letters
         pw.append(random.choice(LOWERCASE))
         pass_len = len(pw)
 
-    for i in range(5):  # Uppercase letters
+    for i in range(NUM_OF_UPPER):  # Uppercase letters
         pw.insert(random.randint(0, pass_len), random.choice(UPPERCASE))
         pass_len = len(pw)
 
-    for i in range(2):  # Symbols
+    for i in range(NUM_OF_SYMBOLS):  # Symbols
         pw.insert(random.randint(0, pass_len), random.choice(SYMBOLS))
         pass_len = len(pw)
 
-    for i in range(3): # Numbers
+    for i in range(NUM_OF_NUMBERS): # Numbers
         pw.insert(random.randint(0, pass_len), random.choice(NUMBERS))
         pass_len = len(pw)
 
