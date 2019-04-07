@@ -7,7 +7,7 @@
 # 3 Numbers
 
 
-import random as r
+import random
 import string
 import sys
 import os
@@ -21,7 +21,7 @@ NUMBERS = tuple(string.digits)
 
 
 
-def main():   
+def main():
     password = gen_pass([])
     while True:
         os.system('cls' if os.name=='nt' else 'clear') # clear console
@@ -46,19 +46,19 @@ def main():
 # Function to generate password
 def gen_pass(pw):
     for i in range(5):  # lowercase letters
-        pw.append(r.choice(LOWERCASE))
+        pw.append(random.choice(LOWERCASE))
         pass_len = len(pw)
 
     for i in range(5):  # Uppercase letters
-        pw.insert(r.randint(0, pass_len), r.choice(UPPERCASE))
+        pw.insert(random.randint(0, pass_len), random.choice(UPPERCASE))
         pass_len = len(pw)
 
     for i in range(2):  # Symbols
-        pw.insert(r.randint(0, pass_len), r.choice(SYMBOLS))
+        pw.insert(random.randint(0, pass_len), random.choice(SYMBOLS))
         pass_len = len(pw)
 
     for i in range(3): # Numbers
-        pw.insert(r.randint(0, pass_len), r.choice(NUMBERS))
+        pw.insert(random.randint(0, pass_len), random.choice(NUMBERS))
         pass_len = len(pw)
 
     return str(''.join(pw))  # Return characters instead of list
