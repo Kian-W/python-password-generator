@@ -24,10 +24,6 @@ LOWERCASE = tuple(string.ascii_lowercase)
 UPPERCASE = tuple(string.ascii_uppercase)
 NUMBERS = tuple(string.digits)
 
-NUM_OF_SYMBOLS = 2
-NUM_OF_LOWER = 5
-NUM_OF_UPPER = 5
-NUM_OF_NUMBERS = 3
 
 ###############
 
@@ -57,17 +53,31 @@ def main():
 
 # Function to generate password
 def gen_pass(pw):
-    print('Enter how many of each characters you need: ')
+    NUM_OF_SYMBOLS = 2
+    NUM_OF_LOWER = 5
+    NUM_OF_UPPER = 5
+    NUM_OF_NUMBERS = 3
 
-    while True:
-        try:
-            NUM_OF_LOWER = int(input('Lowercase Letters: '))
-            NUM_OF_UPPER = int(input('Uppercase Letters: '))
-            NUM_OF_SYMBOLS = int(input('Symbols: '))
-            NUM_OF_NUMBERS = int(input('Numbers: '))
-            break
-        except ValueError:
-            continue
+    
+    # Ask user if they want to enter their own values
+    print('Would you like to enter your own password vales? (eg: amount of symbols) [Y/N]')
+    print('Default is 5 lowercase letters and upper, 2 symbols and 3 numbers.')
+    
+    choice = input('>> ')
+    if choice.upper() == 'Y':
+        print('Enter how many of each characters you need: ')
+    
+        while True:
+            try:
+                NUM_OF_LOWER = int(input('Lowercase Letters: '))
+                NUM_OF_UPPER = int(input('Uppercase Letters: '))
+                NUM_OF_SYMBOLS = int(input('Symbols: '))
+                NUM_OF_NUMBERS = int(input('Numbers: '))
+                break
+            except ValueError:
+                os.system('cls' if os.name=='nt' else 'clear') # clear console
+                continue
+    
 
     
     for i in range(NUM_OF_LOWER):  # lowercase letters
