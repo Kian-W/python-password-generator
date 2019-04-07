@@ -57,6 +57,19 @@ def main():
 
 # Function to generate password
 def gen_pass(pw):
+    print('Enter how many of each characters you need: ')
+
+    while True:
+        try:
+            NUM_OF_LOWER = int(input('Lowercase Letters: '))
+            NUM_OF_UPPER = int(input('Uppercase Letters: '))
+            NUM_OF_SYMBOLS = int(input('Symbols: '))
+            NUM_OF_NUMBERS = int(input('Numbers: '))
+            break
+        except ValueError:
+            continue
+
+    
     for i in range(NUM_OF_LOWER):  # lowercase letters
         pw.append(random.choice(LOWERCASE))
         pass_len = len(pw)
