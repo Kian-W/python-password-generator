@@ -36,15 +36,15 @@ def main():
         # Ask user to save
         print("Password:", password)
         print("\nWould you like to save this password? [Y/N]")
-        choice = input('>>')
+        choice = input('>> ')
 
-        if choice == 'Y':
+        if choice.upper() == 'Y':
             save_pass(password)
 
         # Ask user to gen new pass
         print("\nWould you generate a new password? [Y/N]")
-        choice = input('>>')
-        if choice == 'Y':
+        choice = input('>> ')
+        if choice.upper() == 'Y':
             password = gen_pass([])
         else:
             sys.exit()
@@ -75,7 +75,7 @@ def gen_pass(pw):
 def save_pass(pw):
     with open("passwords.txt", "a+") as f:  
         print("What is this password for?")
-        use = input('>>')
+        use = input('>> ')
         f.write(f'{use}: {pw}\n')
 
 
