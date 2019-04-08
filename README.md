@@ -1,5 +1,5 @@
 # python-password-generator
-A password generator. Generates a random password when run.
+Generates a random password with given values, and have the choice to save them to a file.
 
 # setup
 Requires [Python 3.7.2+](https://www.python.org/downloads/release/python-372/)
