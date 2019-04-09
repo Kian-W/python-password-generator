@@ -46,6 +46,7 @@ def main():
         print("\nWould you generate a new password? [Y/N]")
         choice = input('>> ')
         if choice.upper() == 'Y':
+            os.system('cls' if os.name=='nt' else 'clear')
             password = gen_pass([])
         else:
             sys.exit()
@@ -57,7 +58,6 @@ def gen_pass(pw):
     NUM_OF_LOWER = 5
     NUM_OF_UPPER = 5
     NUM_OF_NUMBERS = 3
-
     
     # Ask user if they want to enter their own values
     print('Would you like to enter your own password vales? (eg: amount of symbols) [Y/N]')
