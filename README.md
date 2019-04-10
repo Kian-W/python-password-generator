@@ -28,6 +28,7 @@ Would you like to save this password? [Y/N]
 
 What is this password for?
 >> test password
+Password saved!
 
 Would you generate a new password? [Y/N]
 >> Y
