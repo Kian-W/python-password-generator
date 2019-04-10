@@ -105,6 +105,7 @@ def save_pass(pw):
         print("What is this password for?")
         use = input('>> ')
         f.write(f'{use}: {pw}\n')
+        print('Password saved!')
 
 
 if __name__ == "__main__":
