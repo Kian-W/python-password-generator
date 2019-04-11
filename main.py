@@ -19,7 +19,7 @@ import os
 
 # Text variables
 
-SYMBOLS = ("?", "@", "£", "$", "!")
+SYMBOLS = ("?", "@", "*", "$", "!")
 LOWERCASE = tuple(string.ascii_lowercase)
 UPPERCASE = tuple(string.ascii_uppercase)
 NUMBERS = tuple(string.digits)
@@ -54,11 +54,6 @@ def main():
 
 # Function to generate password
 def gen_pass(pw):
-    NUM_OF_SYMBOLS = 2
-    NUM_OF_LOWER = 5
-    NUM_OF_UPPER = 5
-    NUM_OF_NUMBERS = 3
-    
     # Ask user if they want to enter their own values
     print('Would you like to enter your own password vales? (eg: amount of symbols) [Y/N]')
     print('Default is 5 lowercase letters and upper, 2 symbols and 3 numbers.')
@@ -69,10 +64,10 @@ def gen_pass(pw):
     
         while True:
             try:
-                NUM_OF_LOWER = int(input('Lowercase Letters: '))
-                NUM_OF_UPPER = int(input('Uppercase Letters: '))
-                NUM_OF_SYMBOLS = int(input('Symbols: '))
-                NUM_OF_NUMBERS = int(input('Numbers: '))
+                num_of_lower = int(input('Lowercase Letters: '))
+                num_of_upper = int(input('Uppercase Letters: '))
+                num_of_symbols = int(input('Symbols: '))
+                num_of_numbers = int(input('Numbers: '))
                 break
             except ValueError:
                 os.system('cls' if os.name=='nt' else 'clear') # clear console
@@ -80,19 +75,19 @@ def gen_pass(pw):
     
 
     
-    for i in range(NUM_OF_LOWER):  # lowercase letters
+    for i in range(num_of_lower):  # lowercase letters
         pw.append(random.choice(LOWERCASE))
         pass_len = len(pw)
 
-    for i in range(NUM_OF_UPPER):  # Uppercase letters
+    for i in range(num_of_upper):  # Uppercase letters
         pw.insert(random.randint(0, pass_len), random.choice(UPPERCASE))
         pass_len = len(pw)
 
-    for i in range(NUM_OF_SYMBOLS):  # Symbols
+    for i in range(num_of_symbols):  # Symbols
         pw.insert(random.randint(0, pass_len), random.choice(SYMBOLS))
         pass_len = len(pw)
 
-    for i in range(NUM_OF_NUMBERS): # Numbers
+    for i in range(num_of_numbers): # Numbers
         pw.insert(random.randint(0, pass_len), random.choice(NUMBERS))
         pass_len = len(pw)
 
