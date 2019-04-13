@@ -62,6 +62,7 @@ def gen_pass(pw):
                 continue
     
 
+    # Build password
     
     for i in range(num_of_lower):  # lowercase letters
         pw.append(random.choice(LOWERCASE))
@@ -89,7 +90,7 @@ def save_pass(pw):
         use = input('>> ')
         f.write(f'{use}: {pw}\n')
         print('Password saved!')
-        
+
 
 
 if __name__ == "__main__":
