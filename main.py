@@ -20,7 +20,7 @@ NUMBERS = tuple(string.digits)
 def main():
     password = gen_pass([])
     while True:
-        os.system('cls' if os.name=='nt' else 'clear') # clear console
+        clear_console()
 
         # Ask user to save
         print("Password:", password)
@@ -34,7 +34,7 @@ def main():
         print("\nWould you generate a new password? [Y/N]")
         choice = input('>> ')
         if choice.upper() == 'Y':
-            os.system('cls' if os.name=='nt' else 'clear')
+            clear_console()
             password = gen_pass([])
         else:
             sys.exit()
@@ -58,12 +58,12 @@ def gen_pass(pw):
                 num_of_numbers = int(input('Numbers: '))
                 break
             except ValueError:
-                os.system('cls' if os.name=='nt' else 'clear') # clear console
+                clear_console()
                 continue
     
 
     # Build password
-    
+
     for i in range(num_of_lower):  # lowercase letters
         pw.append(random.choice(LOWERCASE))
         pass_len = len(pw)
@@ -91,6 +91,10 @@ def save_pass(pw):
         f.write(f'{use}: {pw}\n')
         print('Password saved!')
 
+
+# Function to clear the console 
+def clear_console():
+    os.system('cls' if os.name=='nt' else 'clear')
 
 
 if __name__ == "__main__":
