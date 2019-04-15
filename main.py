@@ -66,19 +66,15 @@ def gen_pass(pw):
 
     for i in range(num_of_lower):  # lowercase letters
         pw.append(random.choice(LOWERCASE))
-        pass_len = len(pw)
 
     for i in range(num_of_upper):  # Uppercase letters
-        pw.insert(random.randint(0, pass_len), random.choice(UPPERCASE))
-        pass_len = len(pw)
+        pw.insert(random.randint(0, len(pw)), random.choice(UPPERCASE))
 
     for i in range(num_of_symbols):  # Symbols
-        pw.insert(random.randint(0, pass_len), random.choice(SYMBOLS))
-        pass_len = len(pw)
+        pw.insert(random.randint(0, len(pw)), random.choice(SYMBOLS))
 
     for i in range(num_of_numbers): # Numbers
-        pw.insert(random.randint(0, pass_len), random.choice(NUMBERS))
-        pass_len = len(pw)
+        pw.insert(random.randint(0, len(pw)), random.choice(NUMBERS))
 
     return str(''.join(pw))  # Return string instead of list
 
