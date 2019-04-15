@@ -49,7 +49,6 @@ def gen_pass(pw):
     choice = input('>> ')
     if choice.upper() == 'Y':
         print('Enter how many of each characters you need: ')
-    
         while True:
             try:
                 num_of_lower = int(input('Lowercase Letters: '))
@@ -60,7 +59,12 @@ def gen_pass(pw):
             except ValueError:
                 clear_console()
                 continue
-    
+    else:
+        num_of_lower = 5
+        num_of_upper = 5
+        num_of_symbols = 2
+        num_of_numbers = 3
+
 
     # Build password
 
