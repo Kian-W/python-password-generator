@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # A Python password generator
 # Generates a random password with given variables.
 # User can enter their own variables (eg, amount of uppercase characters)
