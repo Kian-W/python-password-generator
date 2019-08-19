@@ -18,7 +18,6 @@ UPPERCASE = tuple(string.ascii_uppercase)
 NUMBERS = tuple(string.digits)
 
 
-# Main function
 def main():
     password = gen_pass([])
     while True:
@@ -42,7 +41,6 @@ def main():
             sys.exit()
 
 
-# Function to generate password
 def gen_pass(pw):
     # Ask user if they want to enter their own values
     print('Would you like to enter your own password vales? (eg: amount of symbols) [Y/N]')
@@ -85,7 +83,6 @@ def gen_pass(pw):
     return str(''.join(pw))  # Return string instead of list
 
 
-# Function to save password to a .txt file
 def save_pass(pw):
     with open("passwords.txt", "a+") as f:  
         print("What is this password for?")
@@ -94,7 +91,6 @@ def save_pass(pw):
         print('Password saved!')
 
 
-# Function to clear the console 
 def clear_console():
     os.system('cls' if os.name=='nt' else 'clear')
 
