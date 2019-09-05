@@ -28,13 +28,10 @@ def main():
         if choice.upper() == 'Y':
             save_pass(password)
 
-        print("\nWould you generate a new password? [Y/N]")
-        choice = input('>> ')
-        if choice.upper() == 'Y':
-            clear_console()
-            password = gen_pass([])
-        else:
-            sys.exit()
+        print('Press any key to continue')
+        input()
+        clear_console()
+        main()
 
 
 def gen_pass(pw):
