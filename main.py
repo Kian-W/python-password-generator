@@ -10,7 +10,6 @@ import sys
 import os
 
 
-# Text variables
 
 SYMBOLS = ("?", "@", "*", "$", "!")
 LOWERCASE = tuple(string.ascii_lowercase)
@@ -22,8 +21,6 @@ def main():
     password = gen_pass([])
     while True:
         clear_console()
-
-        # Ask user to save
         print("Password:", password)
         print("\nWould you like to save this password? [Y/N]")
         choice = input('>> ')
@@ -31,7 +28,6 @@ def main():
         if choice.upper() == 'Y':
             save_pass(password)
 
-        # Ask user to gen new pass
         print("\nWould you generate a new password? [Y/N]")
         choice = input('>> ')
         if choice.upper() == 'Y':
@@ -42,7 +38,6 @@ def main():
 
 
 def gen_pass(pw):
-    # Ask user if they want to enter their own values
     print('Would you like to enter your own password vales? (eg: amount of symbols) [Y/N]')
     print('Default is 5 lowercase letters and upper, 2 symbols and 3 numbers.')
     
@@ -65,22 +60,19 @@ def gen_pass(pw):
         num_of_symbols = 2
         num_of_numbers = 3
 
-
-    # Build password
-
-    for i in range(num_of_lower):  # lowercase letters
+    for i in range(num_of_lower):  
         pw.append(random.choice(LOWERCASE))
 
-    for i in range(num_of_upper):  # Uppercase letters
+    for i in range(num_of_upper):  
         pw.insert(random.randint(0, len(pw)), random.choice(UPPERCASE))
 
-    for i in range(num_of_symbols):  # Symbols
+    for i in range(num_of_symbols):  
         pw.insert(random.randint(0, len(pw)), random.choice(SYMBOLS))
 
-    for i in range(num_of_numbers): # Numbers
+    for i in range(num_of_numbers): 
         pw.insert(random.randint(0, len(pw)), random.choice(NUMBERS))
 
-    return str(''.join(pw))  # Return string instead of list
+    return str(''.join(pw))  
 
 
 def save_pass(pw):
